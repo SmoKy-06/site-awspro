@@ -12,6 +12,16 @@
             font-family: 'Plus Jakarta Sans', sans-serif; 
             background-color: #f1f5f9; 
         }
+        /* Pile de boutons flottants pour éviter les chevauchements */
+        .floating-stack {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            z-index: 9999;
+        }
     </style>
     <!-- Script Crisp -->
     <script type="text/javascript">
@@ -95,10 +105,12 @@
         </div>
     </section>
 
-    <!-- Bouton WhatsApp décalé pour éviter le chatbot -->
-    <a href="https://wa.me/+33699862271" target="_blank" class="fixed bottom-8 right-24 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-50">
-        <i class="ph-fill ph-whatsapp-logo text-3xl"></i>
-    </a>
+    <!-- Conteneur pour boutons flottants -->
+    <div class="floating-stack">
+        <a href="https://wa.me/+33699862271" target="_blank" class="bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform">
+            <i class="ph-fill ph-whatsapp-logo text-3xl"></i>
+        </a>
+    </div>
 
     <div class="pb-24"></div>
 </body>

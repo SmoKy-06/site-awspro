@@ -12,16 +12,6 @@
             font-family: 'Plus Jakarta Sans', sans-serif; 
             background-color: #f1f5f9; 
         }
-        /* Pile de boutons flottants pour éviter les chevauchements */
-        .floating-stack {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            z-index: 9999;
-        }
     </style>
     <!-- Script Crisp -->
     <script type="text/javascript">
@@ -32,12 +22,23 @@
 
     <nav class="w-full bg-white border-b border-slate-200 shadow-sm fixed top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col items-center justify-center">
+            <!-- Logo -->
             <div class="text-5xl md:text-6xl font-black tracking-tighter text-slate-900">
                 AWS<span class="text-blue-600">PRO</span>
             </div>
-            <div class="mt-5 flex gap-8 font-bold text-sm tracking-widest uppercase text-slate-400">
+            
+            <!-- Liens d'accès direct propres -->
+            <div class="mt-5 flex gap-12 font-bold text-sm tracking-widest uppercase text-slate-900">
                 <a href="#services" class="hover:text-blue-600 transition-colors">Expertises</a>
                 <a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a>
+                <!-- Accès direct WhatsApp -->
+                <a href="https://wa.me/+33699862271" target="_blank" class="hover:text-blue-600 transition-colors flex items-center gap-2">
+                    <i class="ph-fill ph-whatsapp-logo text-lg"></i> WhatsApp
+                </a>
+                <!-- Accès direct Chatbot -->
+                <button onclick="$crisp.push(['do', 'chat:open'])" class="hover:text-blue-600 transition-colors flex items-center gap-2">
+                    <i class="ph-fill ph-chat-teardrop-dots text-lg"></i> Chat
+                </button>
             </div>
         </div>
     </nav>
@@ -104,13 +105,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Conteneur pour boutons flottants -->
-    <div class="floating-stack">
-        <a href="https://wa.me/+33699862271" target="_blank" class="bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform">
-            <i class="ph-fill ph-whatsapp-logo text-3xl"></i>
-        </a>
-    </div>
 
     <div class="pb-24"></div>
 </body>
